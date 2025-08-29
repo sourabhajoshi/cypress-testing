@@ -1,4 +1,4 @@
-# 🌐 Cypress Testing Roadmap
+# Cypress Testing
 
 This guide covers **Cypress testing topics** from **beginner to advanced**.  
 Follow this step-by-step to master Cypress for end-to-end, integration, and API testing.

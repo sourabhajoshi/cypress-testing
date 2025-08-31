@@ -1,8 +1,31 @@
-# Setup Cypress Automation Framework
+# Core Cypress Commands
 
-npm install cypress --save-dev
-npm run cypress:open
+## **Cypress Navigation commands.**
+
+---
+
+## **Cypress Locating elements commands.**
+
+---
+
+## **Cypress Actions commands.**
+
+---
+
+## **Cypress Assertion commands.**
+
+---
+
+## **Cypress Waiting commands**
+
+---
+
+## **Cypress Network / API commands**
+
+---
+
+## **Cypress Debugging / Helpers commands**
 
 
-npx cypress install 
+
 

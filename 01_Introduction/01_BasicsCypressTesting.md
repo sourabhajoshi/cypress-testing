@@ -53,27 +53,27 @@ Without Cypress, you have to check your app by hand every time you make changes.
 
 ### **Types of Testing in Cypress**
 
-1. End-to-End (E2E) Testing
+**1. End-to-End (E2E) Testing**
 - Scope: Full user journeys across pages.
 - Goal: Ensure the app works as a whole, like a real user would use it.
 - Example: User logs in → navigates to dashboard → creates a post → logs out.
 
-2. Component Testing
+**2. Component Testing**
 - Scope: Isolated UI components (React, Vue, Angular, etc.).
 - Goal: Validate component logic, rendering, and behavior.
 - Example: Test a <Button /> renders with correct label and triggers a callback on click.
 
-3. Integration Testing (supported indirectly)
+**3. Integration Testing (supported indirectly)**
 - Scope: How parts of the app (like multiple components or API + UI) work together.
 - Goal: Catch bugs where components/modules interact.
 - Example: Test a “LoginForm” calls the login API and updates UI with user data.
 
-4. API Testing
+**4. API Testing**
 - Scope: Backend endpoints using cy.request() or cy.intercept().
 - Goal: Ensure APIs return correct status codes, headers, and body.
 - Example: Test POST /login returns 200 with a token.
 
-5. Visual & Accessibility Testing (via plugins)
+**5. Visual & Accessibility Testing (via plugins)**
 - Scope: Looks & usability.
 - Goal: Catch visual regressions or accessibility issues.
 - Example: Compare screenshots of pages across versions; check if all buttons have accessible labels.
@@ -116,7 +116,6 @@ npm install cypress --save-dev
 ```
 npx cypress open
 ```
-
 npx runs binaries from node_modules/.bin. This will launch the Cypress Test Runner app (a GUI). On first run, Cypress auto-creates a default structure in your project.
 ```
 cypress/
@@ -125,7 +124,6 @@ cypress/
   support/      # reusable functions, setup code
 cypress.config.js   # main Cypress config
 ```
-
 ### **Step 5: Run First Test**
 Inside the GUI, Cypress gives you example tests. You can click one, and it will open a browser window that runs live tests.
 
@@ -141,7 +139,6 @@ describe('My First Test', () => {
 ---
 
 # Cypress Project Structure
-
 When you run npx cypress open for the first time, Cypress generates some folders/files
 ```
 cypress/
@@ -150,11 +147,8 @@ cypress/
   support/
 cypress.config.js
 ```
-
 ### **1. cypress/e2e/ → End-to-End test files**
-
 This is where you write your test specs (the actual .cy.js or .cy.ts files). Cypress will auto-detect any test file placed here.
-
 Naming convention:
 - *.cy.js → test files (e.g. login.cy.js, dashboard.cy.js).
 ```
@@ -171,7 +165,6 @@ describe('Login Flow', () => {
 ```
 
 ### **2. cypress/fixtures/ → Test data (mocks)**
-
 Holds static data you want to use inside tests. Useful for mock responses, sample users, JSON payloads, etc.
 
 Example: cypress/fixtures/user.json
@@ -189,7 +182,6 @@ cy.fixture('user').then((user) => {
 ```
 
 ### **3. cypress/support/ → Helpers & global setup**
-
 Contains reusable code and global config.
 
 By default, it has:
@@ -228,7 +220,6 @@ you can just write:
 cy.visit('/login')
 ```
 ---
-
 # Building Blocks of a Cypress Test
 
 **describe()** : Groups tests together.

@@ -408,4 +408,180 @@ it('fills profile form with fixture data', () => {
   })
 })
 ```
+---
 
+## **Page Object Model (POM) for Cypress**
+
+POM = store page selectors + page actions in one place (a “page object”), and call those methods from tests.
+Goal: tests read like plain English and are easy to maintain when the UI changes.
+
+Why use POM
+- Single place to update selectors when UI changes
+- Tests become shorter and easier to read
+- Reusable actions across multiple tests (DRY)
+- Easier to reason about test intent vs implementation details
+
+```
+cypress/
+  e2e/
+    login.cy.js
+    checkout.cy.js
+  pages/              ← page objects here
+    LoginPage.js
+    DashboardPage.js
+    components/
+      Header.js
+  fixtures/
+    user.json
+  support/
+    commands.js
+```
+
+---
+
+## **Data-Driven Testing (DDT) in Cypress**
+
+Data-Driven Testing = Running the same test multiple times using different input data.
+
+Instead of writing multiple tests manually for each scenario, you loop through a dataset.
+
+Data can come from:
+- Fixtures (.json files)
+- Arrays inside the test file
+- External CSV / API
+
+Why use DDT?
+- Reuse the same test logic
+- Test multiple scenarios with minimal code
+- Easier maintenance
+- Centralized test data
+
+Example 1: Loop through fixture data
+
+Step 1: Fixture file (cypress/fixtures/users.json)
+```
+[
+  { "username": "admin", "password": "admin123" },
+  { "username": "guest", "password": "guest123" },
+  { "username": "john", "password": "123456" }
+]
+```
+
+Step 2: Cypress test (loop through fixture)
+```
+describe('Login Tests - Data Driven', () => {
+  beforeEach(() => {
+    cy.visit('/login')
+  })
+
+  it('logs in multiple users', () => {
+    cy.fixture('users').then((users) => {
+      users.forEach((user) => {
+        cy.get('#username').clear().type(user.username)
+        cy.get('#password').clear().type(user.password)
+        cy.get('button[type="submit"]').click()
+
+        // assertion
+        cy.url().should('include', '/dashboard')
+        cy.contains(`Welcome, ${user.username}`).should('be.visible')
+
+        // log out to reset for next user
+        cy.get('#logout').click()
+      })
+    })
+  })
+})
+```
+
+Example 2: Inline array data
+
+Sometimes you don’t want a fixture. You can store data directly in test file:
+```
+describe('Search Filters - Data Driven', () => {
+  const filters = [
+    { category: 'Electronics', brand: 'Sony' },
+    { category: 'Books', brand: 'Penguin' },
+    { category: 'Clothing', brand: 'Nike' }
+  ]
+
+  filters.forEach((filter) => {
+    it(`applies filter for ${filter.category} - ${filter.brand}`, () => {
+      cy.visit('/products')
+      cy.get('#category').select(filter.category)
+      cy.get('#brand').select(filter.brand)
+      cy.get('button.apply-filters').click()
+
+      cy.contains(filter.brand).should('exist')
+    })
+  })
+})
+```
+Each filter combination gets a separate it() test dynamically. Each iteration runs independently → easier to debug failed scenarios.
+
+Example 3: Using Custom Commands + Data
+
+You can combine POM or custom commands with DDT:
+cypress/fixtures/users.json
+```
+[
+  { "username": "admin", "password": "admin123" },
+  { "username": "guest", "password": "guest123" }
+]
+```
+
+cypress/support/commands.js
+```
+Cypress.Commands.add('login', (username, password) => {
+  cy.get('#username').type(username)
+  cy.get('#password').type(password)
+  cy.get('button[type="submit"]').click()
+})
+```
+
+cypress/e2e/login.cy.js
+```
+describe('Login Tests - Data Driven', () => {
+  beforeEach(() => cy.visit('/login'))
+
+  it('logs in multiple users', () => {
+    cy.fixture('users').then((users) => {
+      users.forEach((user) => {
+        cy.login(user.username, user.password)
+        cy.contains(`Welcome, ${user.username}`).should('be.visible')
+        cy.get('#logout').click()
+      })
+    })
+  })
+})
+```
+
+Flow daigaram
+```
+Fixture JSON (users.json)
+  |
+  v
+cy.fixture('users') → Array of objects
+  |
+  v
+forEach(user) loop
+  |
+  v
++---------------------+
+| Test Steps:         |
+| - enter username    |
+| - enter password    |
+| - click login       |
+| - assertions        |
+| - log out           |
++---------------------+
+  |
+  v
+Repeat for next user
+```
+
+Useful for
+- Multiple login users (admin, guest, regular user)
+- Applying different filters / search terms
+- Filling forms with various valid/invalid data
+- Testing different roles & permissions
+- Testing payment scenarios (credit card, net banking, wallet)

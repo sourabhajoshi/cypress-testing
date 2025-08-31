@@ -1,6 +1,6 @@
 # cypress-testing
 
-Cypress is a open/paid automation front-end testing tool designed for modern web applications(means supports React or Vue or Angular) and APS's.
+Cypress is a JS based end-to-end testing framework built specifically for modern web applications (means supports React or Vue or Angular) and API's.
 
 Cypress widely used by developers and testers. We can perform end to end testing, component testing, unit testing etc
 

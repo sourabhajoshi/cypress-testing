@@ -154,6 +154,7 @@ Choose a small app (e.g., Todo app, Shopping Cart). Write Cypress tests for:
 4. **Form Submissions** (with validations & file upload)
 5. **Checkout flow** (multi-step process)
 
+
 **Goal:**  
 End-to-end test coverage of a real app, integrated into CI/CD.
 

@@ -5,7 +5,7 @@ Follow this step-by-step to master Cypress for end-to-end (E2E), integration, an
 
 ---
 
-## Table of Contents
+## Table of Contents   
 1. [Basics (Getting Started)](#1-basics-getting-started)
 2. [Core Cypress Commands](#2-core-cypress-commands)
 3. [Test Organization](#3-test-organization)

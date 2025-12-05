@@ -19,7 +19,7 @@ Follow this step-by-step to master Cypress for end-to-end (E2E), integration, an
 11. [Plugins & Ecosystem](#11-plugins--ecosystem)
 12. [Capstone Project](#12-capstone-project)
 
----
+---       
 
 ## 1. Basics (Getting Started)
 - What is Cypress & how it works vs Selenium

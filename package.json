@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "cypress": "^14.5.4"
+  },
+  "dependencies": {
+    "@quasar/cli": "^2.5.0"
   }
 }

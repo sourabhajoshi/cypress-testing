@@ -1,9 +1,3 @@
 <template>
-  <div>
-    <h1 data-cy="title">Home Page</h1>
-    <p>Welcome to Home!</p>
-  </div>
+  <h3>Cypress Testing Assignments</h3>
 </template>
-
-<script setup>
-</script>

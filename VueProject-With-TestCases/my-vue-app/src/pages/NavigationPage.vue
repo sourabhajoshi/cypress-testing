@@ -1,27 +1,17 @@
 <template>
   <div class="layout">
-    <!-- HEADER -->
-    <header class="app-header">
-      <img src="@/assets/logo.svg" class="logo"/>
 
+    <header class="app-header">
+      <h2>Navigation Command</h2>
       <nav class="nav">
-        <RouterLink to="/navigation">Navigation</RouterLink>
-        <RouterLink to="/locating">Locating Elements</RouterLink>
-        <RouterLink to="/actions">Actions</RouterLink>
-        <RouterLink to="/assertions">Assertions</RouterLink>
-        <RouterLink to="/waiting">Waiting</RouterLink>
+        <RouterLink to="/navigation/visit">visit</RouterLink>
+        <RouterLink to="/navigation/url">url</RouterLink>
       </nav>
     </header>
 
-    <!-- CONTENT -->
     <main class="app-content">
       <RouterView/>
     </main>
-
-    <!-- FOOTER -->
-    <footer class="app-footer">
-      © 2025 Cypress Training Portal
-    </footer>
 
   </div>
 </template>
@@ -50,11 +40,6 @@ import {RouterLink, RouterView} from 'vue-router'
   box-sizing: border-box;
 }
 
-/* Logo */
-.logo {
-  width: 60px;
-}
-
 /* Navigation links */
 .nav {
   display: flex;
@@ -73,6 +58,7 @@ import {RouterLink, RouterView} from 'vue-router'
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
+  border: 1px solid black;
 }
 
 /* Footer full width */

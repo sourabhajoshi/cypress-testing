@@ -7,7 +7,7 @@
       <nav class="nav">
         <RouterLink to="/navigation">Navigation</RouterLink>
         <RouterLink to="/locating">Locating Elements</RouterLink>
-        <RouterLink to="/actions">Actions</RouterLink>
+        <RouterLink to="/action">Actions</RouterLink>
         <RouterLink to="/assertions">Assertions</RouterLink>
         <RouterLink to="/waiting">Waiting</RouterLink>
       </nav>

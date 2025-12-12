@@ -2,11 +2,11 @@
   <div class="layout">
 
     <header class="app-header">
-      <h2>Locating Command</h2>
+      <h2>Action Command</h2>
       <nav class="nav">
-        <RouterLink to="/locating/basic">Basic</RouterLink>
-        <RouterLink to="/locating/mid">MId</RouterLink>
-        <RouterLink to="/locating/advance">Advance</RouterLink>
+        <RouterLink to="/action/basic">Basic</RouterLink>
+        <RouterLink to="/action/mid">MId</RouterLink>
+        <RouterLink to="/action/advance">Advance</RouterLink>
       </nav>
     </header>
 

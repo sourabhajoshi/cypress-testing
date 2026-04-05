@@ -1,6 +1,6 @@
 # Test Organization
 
-## **Test Suite (describe)**
+## **Test Suite (describe)**    
 
 A container for grouping related test cases. Makes tests easier to organize (like chapters in a book). You can nest multiple describe() blocks. Usually written with a title string + a callback function.
 ```

@@ -27,7 +27,7 @@ Follow this step-by-step to master Cypress for end-to-end (E2E), integration, an
 - Open Cypress Test Runner (`npx cypress open`)
 - Project structure (`cypress/e2e`, `fixtures`, `support`)
 - First test with `describe`, `it`, and Cypress commands
-
+    
 **Practice:**  
 Write a test that visits a webpage and checks the title.
 

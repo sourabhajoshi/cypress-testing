@@ -53,7 +53,7 @@ Build a login form test.
 - Page Object Model (POM) basics
 - Data-driven testing (loop through test data)
 
-**Practice:**  
+**Practice:**    
 Reuse login logic with a custom command.
 
 ---

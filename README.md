@@ -165,4 +165,4 @@ By the end of this roadmap, you’ll be able to:
 - Write stable Cypress tests for any web app  
 - Automate APIs, authentication, and UI flows  
 - Run tests in CI/CD pipelines  
-- Apply Cypress best practices like a QA Automation Engineer  
+- Apply Cypress best practices like a QA Automation Engineer      

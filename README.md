@@ -21,7 +21,7 @@ Follow this step-by-step to master Cypress for end-to-end (E2E), integration, an
 
 ---       
 
-## 1. Basics (Getting Started)
+## 1. Basics (Getting Started)    
 - What is Cypress & how it works vs Selenium
 - Install & setup (`npm install cypress --save-dev`)
 - Open Cypress Test Runner (`npx cypress open`)

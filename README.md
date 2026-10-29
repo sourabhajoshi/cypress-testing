@@ -1,7 +1,7 @@
 # Cypress Testing Roadmap                    
 
 This guide covers **Cypress testing topics** from **beginner to advanced**.      
-Follow this step-by-step to master Cypress for end-to-end (E2E), integration, and API testing.   
+Follow this step-by-step to master Cypress for end-to-end (E2E), integration, and API testing.     
             
 ---             
 
